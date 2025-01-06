@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Manual Assistant</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <header>
+        <img id="companyLogo" src="company-logo.png" alt="Company Logo">
+    </header>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>UP System DBM Budget Assistant</h1>
+        </div>
+        <div class="description">
+            <p>Ask any question about the 2024 University of the Philippine System budget by the Department of Budget and Management.</p>
+        </div>
+        <div class="button-container">
+            <button onclick="redirectToPDF()">View PDF</button>
+        </div>
+                <textarea id="userInput" rows="4" placeholder="Type your question here..." aria-label="Enter your question here"></textarea>
+        <div class="button-container">
+            <button onclick="askQuestion()">Ask</button>
+        </div>
+        <div id="loadingSpinner" style="display:none;">⏳ Fetching a response...</div>
+        <div class="response-container" id="responseContainer"></div>
+        <div id="chatContainer">
+            <h3 id="historyHeader">Previous Questions & Answers</h3>
+            <ul id="chatHistory"></ul>
+        </div>          
+    </div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>

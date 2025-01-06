@@ -1,0 +1,204 @@
+/*Default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Flexbox layout to center everything */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    text-align: left;
+    height: 100vh; 
+    margin: 0;
+}
+
+/* Style the header and logo */
+header {
+    margin-bottom: 1px; 
+}
+
+/* Logo image */
+#companyLogo {
+    width: 150px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* Additional styles for the main content */
+#mainContent {
+    padding: 20px;
+}
+
+/* App Container */
+.app-container {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* Description */
+.description {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555555;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #1f78b4;
+}
+
+/* Response Container */
+.response-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#historyHeader {
+    color: grey;
+}
+
+#chatContainer {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+  
+#chatHistory {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    height: 150px;
+}
+  
+#chatHistory li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e9f7fb;
+    border-radius: 5px;
+}
+
+.chatMessage {
+    color: gray;
+    padding: 5px;
+    margin: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.userMessage {
+    text-align: left;
+}
+
+.botMessage {
+    text-align: right;
+}
+
+/* Textarea */
+textarea {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    font-size: 14px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+#loadingSpinner {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+#companyLogo {
+    width: 150px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 4px;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .app-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
+
