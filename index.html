@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operations Manual Assistant</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <!-- Linking google fonts for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
-    <header>
-        <img id="companyLogo" src="company-logo.png" alt="Company Logo">
-    </header>
 
-    <div class="app-container">
-        <div class="header">
-            <h1>UP System DBM Budget Assistant</h1>
-        </div>
-        <div class="description">
-            <p>Ask any question about the 2024 University of the Philippine System budget by the Department of Budget and Management.</p>
-        </div>
-        <div class="button-container">
-            <button onclick="redirectToPDF()">View PDF</button>
-        </div>
-                <textarea id="userInput" rows="4" placeholder="Type your question here..." aria-label="Enter your question here"></textarea>
-        <div class="button-container">
-            <button onclick="askQuestion()">Ask</button>
-        </div>
-        <div id="loadingSpinner" style="display:none;">⏳ Fetching a response...</div>
-        <div class="response-container" id="responseContainer"></div>
-        <div id="chatContainer">
-            <h3 id="historyHeader">Previous Questions & Answers</h3>
-            <ul id="chatHistory"></ul>
-        </div>          
-    </div>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#"><img src="./resources/upsys_white.png" alt="UP logo"></a></li>
+    </ul>
+  </nav>
+
+  <!-- Header greetings -->
+  <header class="header">
+    <img src="./resources/company-logo.png">
+    <h2 class="title">UP System DBM Budget Assistant</h2>
     
-    <script src="script.js"></script> 
+    <h4 class="subtitle">How can I help you today?</h4>
+    <p>Ask any question about the 2024 University of the Philippines System budget by the Department of Budget and Management.</p>
+  </header>
+
+  <!-- Chat list/container -->
+  <div class="chat-list"></div>
+
+  <!-- Typing area -->
+  <div class="typing-area">
+    <form action="#" class="typing-form">
+      <div class="input-wrapper">
+        <input type="text" placeholder="Ask me anything"
+        class="typing-input" required>
+        <button class="icon material-symbols-rounded">send</button>
+      </div>
+      <div class="action-buttons">
+        <span id="change-theme-btn" class="icon material-symbols-rounded">light_mode</span>
+        <span id="delete-chat-btn" class="icon material-symbols-rounded">delete</span>
+      </div>
+    </form>
+    <p class="disclaimer-text">
+      The University of the Philippines System Budget Assistant utlizes OpenAI.
+    </p>
+  </div>
+
+  
+
+  <script src="script.js"></script>
 </body>
 </html>
