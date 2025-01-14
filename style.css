@@ -65,6 +65,7 @@ body {
 
 .header p {
   max-width: 70%;
+  font-size: 0.9rem;
 }
 
 body.hide-header .header{
