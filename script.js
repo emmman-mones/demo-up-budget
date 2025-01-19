@@ -3,10 +3,20 @@ const chatList = document.querySelector(".chat-list");
 const changeThemeBtn = document.querySelector("#change-theme-btn");
 const deleteChatBtn = document.querySelector("#delete-chat-btn")
 
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'postgres',         // Replace with your PostgreSQL username
+  host: 'localhost',            // Or your database's host address
+  database: 'demo-up-budget',    // Replace with your database name
+  password: '8916',    // Replace with your PostgreSQL password
+  port: 5432,                   // Default PostgreSQL port
+});
+
 let userMessage = null;
 let jsonData = null;
 
-const jsonFiles = ['./1.json', './2.json', './3.json', './4.json', './5.json', './6.json', './7.json', './8.json'];
+const jsonFiles = ['./01.json', './02.json', './03.json', './04.json', './05.json', './06.json'];
 const openaiAPIKey = ""; // Keep your API key private
 const apiEndpoint = "https://api.openai.com/v1/chat/completions";
 
@@ -61,37 +71,27 @@ const createMessageElement = (content, ...classes) => {
 
 // Ask a question to OpenAI using the JSON data
 const askQuestion = async (incomingMessageDiv) => {
-  const responseElement = incomingMessageDiv.querySelector(".text"); // Get text element
+  const responseElement = incomingMessageDiv.querySelector(".text");
 
-  // Check if jsonData is loaded
-  if (!jsonData || Object.keys(jsonData).length === 0) {
-    responseElement.textContent = "JSON files are not loaded properly. Please ensure all files are accessible.";
-    return;
-  }
+  // Fetch logs related to the current query
+  const relevantLogs = await fetchRelevantLogs(userMessage);
 
-  // Instructional text to include in the prompt
-  const instructionalText = "Please use the combined data from all JSON files as context when answering the question. Answer by using the JSON document as main reference, unless it is absolutely out of context; for example, if the prompt is just a simple greeting. Answer in a concise, clear, and professional manner. You may opt not to answer in complete sentences. Be empathetic only when necessary. \n\n'";
+  const modifiedQuestion = `
+    Using the following past knowledge, answer the user's query:
+    ${relevantLogs}
 
-  // Combine the user's input, instructional text, and JSON content
-  const jsonContent = JSON.stringify(jsonData, null, 2); // Pretty-print JSON for readability
-  const modifiedQuestion = `${userMessage}\n\n${instructionalText}\n\n${jsonContent}`;
+    User Query: ${userMessage}
+    Combined Data Context: ${JSON.stringify(jsonData, null, 2)}
+  `;
 
   try {
-    // Send the modified question to OpenAI
     const aiResponse = await openAiRequest(modifiedQuestion);
-    
-
-    // Assuming openAiRequest returns the response in a usable format
-    // responseElement.innerText = aiResponse || "No response from OpenAI.";
     showTypingEffect(aiResponse, responseElement, incomingMessageDiv);
-
   } catch (error) {
     console.error("Error while fetching the AI response:", error);
     responseElement.innerText = "Error: Unable to get a response from the AI.";
-  } finally {
-    incomingMessageDiv.classList.remove("loading"); // Hide loading
   }
-}
+};
 
 // Make a request to OpenAI API (using chat/completions)
 async function openAiRequest(modifiedQuestion) {
@@ -105,11 +105,11 @@ async function openAiRequest(modifiedQuestion) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${openaiAPIKey}`, // Use a securely stored API key
+          Authorization: `Bearer ${openaiAPIKey}`, 
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo", // Use the appropriate model
-          messages: [{ role: "user", content: prompt }], // Correct usage of 'messages'
+          model: "gpt-4-turbo", 
+          messages: [{ role: "user", content: prompt }], 
           max_tokens: 200,
           temperature: 0.7,
         }),
@@ -132,6 +132,19 @@ async function openAiRequest(modifiedQuestion) {
       return "There was an error processing your request. Please try again.";
     }
 }
+
+const fetchRelevantLogs = async (query) => {
+  try {
+    const result = await pool.query(
+      "SELECT response FROM query_logs WHERE query ILIKE $1 ORDER BY timestamp DESC LIMIT 5",
+      [`%${query}%`]
+    );
+    return result.rows.map(row => row.response).join("\n");
+  } catch (error) {
+    console.error("Error fetching logs:", error);
+    return ""; // Return an empty string if there's an error
+  }
+};
 
 // Show a loading animation while waiting for the API response
 const showLoadingAnimation = () => {
