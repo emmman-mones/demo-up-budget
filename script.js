@@ -232,7 +232,56 @@ deleteChatBtn.addEventListener("click", () => {
   }
 });
 
+const fs = require('fs').promises;
 
+const readFeedbackData = async () => {
+  try {
+    const data = await fs.readFile('./feedback.json', 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error reading feedback.json:', error);
+    return { logs: [] }; // Return an empty structure if the file doesn't exist
+  }
+};
+
+const writeFeedbackData = async (data) => {
+  try {
+    await fs.writeFile('./feedback.json', JSON.stringify(data, null, 2), 'utf-8');
+    console.log('Feedback data updated successfully.');
+  } catch (error) {
+    console.error('Error writing to feedback.json:', error);
+  }
+};
+
+const updateFeedback = async (id, isAccurate, correctedResponse) => {
+  const data = await readFeedbackData();
+
+  const log = data.logs.find((entry) => entry.id === id);
+  if (log) {
+    log.isAccurate = isAccurate;
+    if (correctedResponse) log.correctedResponse = correctedResponse;
+    log.timestamp = new Date().toISOString(); // Update the timestamp
+  } else {
+    console.error('Log entry not found for ID:', id);
+  }
+
+  await writeFeedbackData(data);
+};
+
+const fetchCorrectedResponse = async (query) => {
+  const data = await readFeedbackData();
+  const log = data.logs.find(
+    (entry) => entry.query.toLowerCase() === query.toLowerCase() && entry.correctedResponse
+  );
+  return log ? log.correctedResponse : null;
+};
+
+const processQuestion = async (userMessage) => {
+  const correctedResponse = await fetchCorrectedResponse(userMessage);
+
+  const finalResponse = correctedResponse || (await openAiRequest(userMessage));
+  console.log('Final Response:', finalResponse);
+};
 
 // Load the JSON file immediately after the page is loaded
 window.onload = loadJsonFiles;
