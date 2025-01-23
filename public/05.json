@@ -25,6 +25,7 @@
         "data": {
           "title": "New Appropriations, by Programs/Activities/Projects",
           "basis": "cash-based",
+          "unit": "in Pesos",
           "data": {
             "A. Regular Programs": {
               "1. General Administration and Support": {

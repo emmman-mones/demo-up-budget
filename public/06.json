@@ -1,187 +1,186 @@
 {
-    "title": "Obligations by Object of Expenditures",
-    "basis": "cash-based",
-    "unit": "in thousand Pesos",
-    "data": {
+  "title": "Obligations by Object of Expenditures",
+  "basis": "cash-based",
+  "unit": "in Pesos",
+  "data": {
       "Current Operating Expenditures": {
-        "Personnel Services": {
-          "Civilian Personnel": {
-            "Permanent Positions": {
-              "Basic Salary": {
-                "2023": 8998423,
-                "2024": 10801448,
-                "2025": 11020670
-              },
-              "Total Permanent Positions": {
-                "2023": 8998423,
-                "2024": 10801448,
-                "2025": 11020670
+          "Personnel Services": {
+              "Civilian Personnel": {
+                  "Permanent Positions": {
+                      "Basic Salary": {
+                          "2023": 8998423000,
+                          "2024": 10801448000,
+                          "2025": 11020670000
+                      },
+                      "Total Permanent Positions": {
+                          "2023": 8998423000,
+                          "2024": 10801448000,
+                          "2025": 11020670000
+                      }
+                  },
+                  "Other Compensation Common to All": {
+                      "Personnel Economic Relief Allowance": {
+                          "2023": 344226000,
+                          "2024": 319452000,
+                          "2025": 323112000
+                      },
+                      "Representation Allowance": {
+                          "2023": 95352000,
+                          "2024": 11034000,
+                          "2025": 12780000
+                      },
+                      "Transportation Allowance": {
+                          "2023": 99330000,
+                          "2024": 9714000,
+                          "2025": 11220000
+                      },
+                      "Clothing and Uniform Allowance": {
+                          "2023": 82866000,
+                          "2024": 80718000,
+                          "2025": 95277000
+                      },
+                      "Honoraria": {
+                          "2023": 208505000,
+                          "2024": 208514000,
+                          "2025": 208514000
+                      },
+                      "Overtime Pay": {
+                          "2023": 24681000
+                      },
+                      "Mid-Year Bonus - Civilian": {
+                          "2023": 799508000,
+                          "2024": 900121000,
+                          "2025": 918389000
+                      },
+                      "Year-End Bonus": {
+                          "2023": 798374000,
+                          "2024": 900121000,
+                          "2025": 918389000
+                      },
+                      "Cash Gift": {
+                          "2023": 86226000,
+                          "2024": 67265000,
+                          "2025": 68055000
+                      },
+                      "Productivity Enhancement Incentive": {
+                          "2023": 69235000,
+                          "2024": 67265000,
+                          "2025": 68055000
+                      },
+                      "Performance-Based Bonus": {
+                          "2023": 429493000
+                      },
+                      "Step Increment": {
+                          "2024": 27003000,
+                          "2025": 27551000
+                      },
+                      "Collective Negotiation Agreement": {
+                          "2023": 446196000
+                      },
+                      "Total Other Compensation Common to All": {
+                          "2023": 3336772000,
+                          "2024": 2591207000,
+                          "2025": 2651342000
+                      }
+                  },
+                  "Other Compensation for Specific Groups": {
+                      "Magna Carta for Public Health Workers": {
+                          "2023": 525079000,
+                          "2024": 401807000,
+                          "2025": 374360000
+                      },
+                      "Magna Carta for Science & Technology Personnel": {
+                          "2023": 9596000,
+                          "2024": 11210000,
+                          "2025": 11210000
+                      },
+                      "Laundry Allowance": {
+                          "2023": 1270000
+                      },
+                      "Hazard Pay": {
+                          "2023": 3774000
+                      },
+                      "Longevity Pay": {
+                          "2023": 3774000
+                      },
+                      "Night-Shift Differential Pay": {
+                          "2023": 49272000,
+                          "2024": 50227000
+                      },
+                      "Lump-Sum for Filling of Positions - Civilian": {
+                          "2024": 306635000,
+                          "2025": 528355000
+                      },
+                      "Lump-Sum for Personnel Services": {
+                          "2024": 24413000
+                      },
+                      "Other Personnel Benefits": {
+                          "2023": 279105000
+                      },
+                      "Anniversary Bonus - Civilian": {
+                          "2023": 38678000
+                      },
+                      "Total Other Compensation for Specific Groups": {
+                          "2023": 918296000,
+                          "2024": 794292000,
+                          "2025": 913925000
+                      }
+                  },
+                  "Other Benefits": {
+                      "Retirement and Life Insurance Premiums": {
+                          "2023": 1253448000,
+                          "2024": 1296173000,
+                          "2025": 1322481000
+                      },
+                      "PAG-IBIG Contributions": {
+                          "2023": 16156000,
+                          "2024": 16245000,
+                          "2025": 16382000
+                      },
+                      "PhilHealth Contributions": {
+                          "2023": 150339000,
+                          "2024": 182045000,
+                          "2025": 215115000
+                      },
+                      "Employees Compensation Insurance Premiums": {
+                          "2023": 17150000,
+                          "2024": 17162000,
+                          "2025": 17424000
+                      },
+                      "Retirement Gratuity": {
+                          "2025": 19270000
+                      },
+                      "Loyalty Award - Civilian": {
+                          "2025": 3950000
+                      },
+                      "Terminal Leave": {
+                          "2025": 578689000
+                      },
+                      "Total Other Benefits": {
+                          "2023": 2044959000,
+                          "2024": 1706711000,
+                          "2025": 1970882000
+                      }
+                  },
+                  "Non-Permanent Positions": {
+                      "2023": 912135000,
+                      "2024": 253466000,
+                      "2025": 253466000
+                  },
+                  "Total Personnel Services": {
+                      "2023": 16210545000,
+                      "2024": 16147124000,
+                      "2025": 16809511000
+                  }
               }
-            },
-            "Other Compensation Common to All": {
-              "Personnel Economic Relief Allowance": {
-                "2023": 344226,
-                "2024": 319452,
-                "2025": 323112
-              },
-              "Representation Allowance": {
-                "2023": 95352,
-                "2024": 11034,
-                "2025": 12780
-              },
-              "Transportation Allowance": {
-                "2023": 99330,
-                "2024": 9714,
-                "2025": 11220
-              },
-              "Clothing and Uniform Allowance": {
-                "2023": 82866,
-                "2024": 80718,
-                "2025": 95277
-              },
-              "Honoraria": {
-                "2023": 208505,
-                "2024": 208514,
-                "2025": 208514
-              },
-              "Overtime Pay": {
-                "2023": 24681
-              },
-              "Mid-Year Bonus - Civilian": {
-                "2023": 799508,
-                "2024": 900121,
-                "2025": 918389
-              },
-              "Year-End Bonus": {
-                "2023": 798374,
-                "2024": 900121,
-                "2025": 918389
-              },
-              "Cash Gift": {
-                "2023": 86226,
-                "2024": 67265,
-                "2025": 68055
-              },
-              "Productivity Enhancement Incentive": {
-                "2023": 69235,
-                "2024": 67265,
-                "2025": 68055
-              },
-              "Performance-Based Bonus": {
-                "2023": 429493
-              },
-              "Step Increment": {
-                "2024": 27003,
-                "2025": 27551
-              },
-              "Collective Negotiation Agreement": {
-                "2023": 446196
-              },
-              "Total Other Compensation Common to All": {
-                "2023": 3336772,
-                "2024": 2591207,
-                "2025": 2651342
+          },
+          "Maintenance and Other Operating Expenses": {
+              "Traveling Expenses": {
+                  "2023": 41501000,
+                  "2024": 56141000,
+                  "2025": 37344000
               }
-            },
-            "Other Compensation for Specific Groups": {
-              "Magna Carta for Public Health Workers": {
-                "2023": 525079,
-                "2024": 401807,
-                "2025": 374360
-              },
-              "Magna Carta for Science & Technology Personnel": {
-                "2023": 9596,
-                "2024": 11210,
-                "2025": 11210
-              },
-              "Laundry Allowance": {
-                "2023": 1270
-              },
-              "Hazard Pay": {
-                "2023": 3774
-              },
-              "Longevity Pay": {
-                "2023": 3774
-              },
-              "Night-Shift Differential Pay": {
-                "2023": 49272,
-                "2024": 50227
-              },
-              "Lump-Sum for Filling of Positions - Civilian": {
-                "2024": 306635,
-                "2025": 528355
-              },
-              "Lump-Sum for Personnel Services": {
-                "2024": 24413
-              },
-              "Other Personnel Benefits": {
-                "2023": 279105
-              },
-              "Anniversary Bonus - Civilian": {
-                "2023": 38678
-              },
-              "Total Other Compensation for Specific Groups": {
-                "2023": 918296,
-                "2024": 794292,
-                "2025": 913925
-              }
-            },
-            "Other Benefits": {
-              "Retirement and Life Insurance Premiums": {
-                "2023": 1253448,
-                "2024": 1296173,
-                "2025": 1322481
-              },
-              "PAG-IBIG Contributions": {
-                "2023": 16156,
-                "2024": 16245,
-                "2025": 16382
-              },
-              "PhilHealth Contributions": {
-                "2023": 150339,
-                "2024": 182045,
-                "2025": 215115
-              },
-              "Employees Compensation Insurance Premiums": {
-                "2023": 17150,
-                "2024": 17162,
-                "2025": 17424
-              },
-              "Retirement Gratuity": {
-                "2025": 19270
-              },
-              "Loyalty Award - Civilian": {
-                "2025": 3950
-              },
-              "Terminal Leave": {
-                "2025": 578689
-              },
-              "Total Other Benefits": {
-                "2023": 2044959,
-                "2024": 1706711,
-                "2025": 1970882
-              }
-            },
-            "Non-Permanent Positions": {
-              "2023": 912135,
-              "2024": 253466,
-              "2025": 253466
-            },
-            "Total Personnel Services": {
-              "2023": 16210545,
-              "2024": 16147124,
-              "2025": 16809511
-            }
           }
-        },
-        "Maintenance and Other Operating Expenses": {
-          "Traveling Expenses": {
-            "2023": 41501,
-            "2024": 56141,
-            "2025": 37344
-          }
-        }
       }
-    }
   }
-  
+}
