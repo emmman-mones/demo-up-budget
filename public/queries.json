@@ -1,0 +1,17 @@
+[
+  {
+    "query": "What is the total New General Appropriations budget?",
+    "response": "The total New General Appropriations budget is 22,337,123,000 pesos.",
+    "timestamp": "2025-01-23T15:14:47.600Z"
+  },
+  {
+    "query": "Did the budget plan say anything about funding for research?",
+    "response": "Yes, the budget plan includes funding for research. Specifically, the \"Research Program\" under the \"Operations\" category is allocated funds that include 525,564,000 for Personnel Services and 217,857,000 for Maintenance and Other Operating Expenses, totaling 743,421,000.",
+    "timestamp": "2025-01-23T16:56:40.094Z"
+  },
+  {
+    "query": "Is there budget for hospital services?",
+    "response": "Yes, there is a budget allocated for hospital services. In 2025, the Hospital Services Program under the Operations category of the budget includes the following allocations:\n- Personnel Services: 2,907,169,000 pesos\n- Maintenance and Other Operating Expenses: 2,107,561,000 pesos\n- Capital Outlays: 0 pesos\nThe total budget for the Hospital Services Program in 2025 is 5,014,730,000 pesos.",
+    "timestamp": "2025-01-23T16:57:34.134Z"
+  }
+]

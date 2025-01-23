@@ -1,0 +1,276 @@
+{
+  "name": "Appropriations and Obligations",
+  "basis": "cash-based",
+  "units": "in thousand Pesos",
+  "budget_plan": [
+      {
+          "description": "New General Appropriations",
+          "budget": {
+              "2023": 24263577,
+              "2024": 24771903,
+              "2025": 22337123
+          },
+          "subcategories": [
+              {
+                  "description": "General Fund",
+                  "budget": {
+                      "2023": 24263577,
+                      "2024": 24771903,
+                      "2025": 22337123
+                  }
+              }
+          ],
+          "analysis": {
+              "2023 to 2024": {
+                  "change": 508326,
+                  "percentage_change": "2.09%",
+                  "reason": "Increase in general funding requirements."
+              },
+              "2024 to 2025": {
+                  "change": -2434780,
+                  "percentage_change": "-9.83%",
+                  "reason": "Reduction in appropriations due to fiscal adjustments."
+              }
+          }
+      },
+      {
+          "description": "Automatic Appropriations",
+          "budget": {
+              "2023": 1253243,
+              "2024": 1296173,
+              "2025": 1322481
+          },
+          "subcategories": [
+              {
+                  "description": "Retirement and Life Insurance Premiums",
+                  "budget": {
+                      "2023": 1253243,
+                      "2024": 1296173,
+                      "2025": 1322481
+                  }
+              }
+          ],
+          "analysis": {
+              "2023 to 2024": {
+                  "change": 42930,
+                  "percentage_change": "3.43%",
+                  "reason": "Increase due to adjustments in insurance premiums."
+              },
+              "2024 to 2025": {
+                  "change": 26308,
+                  "percentage_change": "2.03%",
+                  "reason": "Continued growth in obligations for retirement and insurance."
+              }
+          }
+      },
+      {
+          "description": "Continuing Appropriations",
+          "budget": {
+              "2023": 5195467,
+              "2024": 4464957,
+              "2025": null
+          },
+          "subcategories": [
+              {
+                  "description": "Unreleased Appropriation for Capital Outlays",
+                  "budget": {
+                      "2023": 1172359,
+                      "2024": 1002736,
+                      "2025": null
+                  },
+                  "subcategories": [
+                      {
+                          "description": "R.A. No. 11639",
+                          "budget": {
+                              "2023": 1172359,
+                              "2024": 1002736,
+                              "2025": null
+                          }
+                      }
+                  ]
+              },
+              {
+                  "description": "Unreleased Appropriation for MOOE",
+                  "budget": {
+                      "2023": 231926,
+                      "2024": 121734,
+                      "2025": null
+                  },
+                  "subcategories": [
+                      {
+                          "description": "R.A. No. 11639",
+                          "budget": {
+                              "2023": 231926,
+                              "2024": 121734,
+                              "2025": null
+                          }
+                      }
+                  ]
+              },
+              {
+                  "description": "Unobligated Releases for Capital Outlays",
+                  "budget": {
+                      "2023": 336971,
+                      "2024": 691892,
+                      "2025": null
+                  },
+                  "subcategories": [
+                      {
+                          "description": "R.A. No. 11639",
+                          "budget": {
+                              "2023": 336971,
+                              "2024": 691892,
+                              "2025": null
+                          }
+                      }
+                  ]
+              },
+              {
+                  "description": "Unobligated Releases for MOOE",
+                  "budget": {
+                      "2023": 3454211,
+                      "2024": 2648595,
+                      "2025": null
+                  },
+                  "subcategories": [
+                      {
+                          "description": "R.A. No. 11639",
+                          "budget": {
+                              "2023": 3454211,
+                              "2024": 2648595,
+                              "2025": null
+                          }
+                      }
+                  ]
+              }
+          ],
+          "analysis": {
+              "2023 to 2024": {
+                  "change": -730510,
+                  "percentage_change": "-14.05%",
+                  "reason": "Reduction in continuing appropriations reflecting project completions."
+              }
+          }
+      },
+      {
+          "description": "Budgetary Adjustment(s)",
+          "budget": {
+              "2023": 474116,
+              "2024": null,
+              "2025": null
+          },
+          "analysis": {
+              "2023": {
+                  "reason": "Adjustments reflecting unforeseen budgetary needs."
+              }
+          }
+      },
+      {
+          "description": "Release(s) from",
+          "budget": {
+              "2023": null,
+              "2024": null,
+              "2025": null
+          },
+          "subcategories": [
+              {
+                  "description": "Department of Health (DOH)",
+                  "budget": {
+                      "2023": 145550,
+                      "2024": null,
+                      "2025": null
+                  }
+              },
+              {
+                  "description": "Miscellaneous Personnel Benefits Fund",
+                  "budget": {
+                      "2023": 324756,
+                      "2024": null,
+                      "2025": null
+                  }
+              },
+              {
+                  "description": "Pension and Gratuity Fund",
+                  "budget": {
+                      "2023": 3810,
+                      "2024": null,
+                      "2025": null
+                  }
+              }
+          ]
+      },
+      {
+          "description": "Total Available Appropriations",
+          "budget": {
+              "2023": 31186403,
+              "2024": 30533033,
+              "2025": 23659604
+          },
+          "analysis": {
+              "2023 to 2024": {
+                  "change": -653370,
+                  "percentage_change": "-2.09%",
+                  "reason": "Slight reduction reflecting fiscal policies."
+              },
+              "2024 to 2025": {
+                  "change": -6873430,
+                  "percentage_change": "-22.51%",
+                  "reason": "Significant decrease due to spending cuts and reallocations."
+              }
+          }
+      },
+      {
+          "description": "Unused Appropriations",
+          "budget": {
+              "2023": -6801811,
+              "2024": -4464957,
+              "2025": null
+          },
+          "subcategories": [
+              {
+                  "description": "Unreleased Appropriation",
+                  "budget": {
+                      "2023": -1689720,
+                      "2024": -1124470,
+                      "2025": null
+                  }
+              },
+              {
+                  "description": "Unobligated Allotment",
+                  "budget": {
+                      "2023": -5112091,
+                      "2024": -3340487,
+                      "2025": null
+                  }
+              }
+          ],
+          "analysis": {
+              "2023 to 2024": {
+                  "change": 2336854,
+                  "percentage_change": "34.36%",
+                  "reason": "Reduction in unused appropriations reflecting improved budget utilization."
+              }
+          }
+      },
+      {
+          "description": "Total Obligations",
+          "budget": {
+              "2023": 24384592,
+              "2024": 26068076,
+              "2025": 23659604
+          },
+          "analysis": {
+              "2023 to 2024": {
+                  "change": 1683484,
+                  "percentage_change": "6.91%",
+                  "reason": "Increase in obligations due to ongoing programs and continuation of major projects." 
+              }, 
+              "2024 to 2025": { 
+                  "change": -2408472, 
+                  "percentage_change": "-9.24%", 
+                  "reason": "Decrease reflecting project completions and fiscal constraints." 
+              } 
+          } 
+      } 
+  ] 
+}

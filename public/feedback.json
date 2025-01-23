@@ -1,0 +1,13 @@
+{
+    "logs": [
+      {
+        "id": 1,
+        "query": "What is the UP 2025 budget?",
+        "response": "₱30 billion",
+        "isAccurate": null,
+        "correctedResponse": null,
+        "timestamp": "2025-01-12T14:30:00Z"
+      }
+    ]
+  }
+  
