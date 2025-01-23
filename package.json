@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "openai": "^4.74.0"
+    "openai": "^4.74.0",
+    "pg": "^8.13.1"
   }
 }
