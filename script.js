@@ -3,16 +3,6 @@ const chatList = document.querySelector(".chat-list");
 const changeThemeBtn = document.querySelector("#change-theme-btn");
 const deleteChatBtn = document.querySelector("#delete-chat-btn")
 
-const { Pool } = require('pg');
-
-const pool = new Pool({
-  user: 'postgres',         // Replace with your PostgreSQL username
-  host: 'localhost',            // Or your database's host address
-  database: 'demo-up-budget',    // Replace with your database name
-  password: '8916',    // Replace with your PostgreSQL password
-  port: 5432,                   // Default PostgreSQL port
-});
-
 let userMessage = null;
 let jsonData = null;
 
@@ -71,27 +61,37 @@ const createMessageElement = (content, ...classes) => {
 
 // Ask a question to OpenAI using the JSON data
 const askQuestion = async (incomingMessageDiv) => {
-  const responseElement = incomingMessageDiv.querySelector(".text");
+  const responseElement = incomingMessageDiv.querySelector(".text"); // Get text element
 
-  // Fetch logs related to the current query
-  const relevantLogs = await fetchRelevantLogs(userMessage);
+  // Check if jsonData is loaded
+  if (!jsonData || Object.keys(jsonData).length === 0) {
+    responseElement.textContent = "JSON files are not loaded properly. Please ensure all files are accessible.";
+    return;
+  }
 
-  const modifiedQuestion = `
-    Using the following past knowledge, answer the user's query:
-    ${relevantLogs}
+  // Instructional text to include in the prompt
+  const instructionalText = "Answer using the provided JSON data. Be clear and concise. Unless otherwise stated, use 2025 data to answer questions. \n\n'";
 
-    User Query: ${userMessage}
-    Combined Data Context: ${JSON.stringify(jsonData, null, 2)}
-  `;
+  // Combine the user's input, instructional text, and JSON content
+  const jsonContent = JSON.stringify(jsonData, null, 2); // Pretty-print JSON for readability
+  const modifiedQuestion = `${userMessage}\n\n${instructionalText}\n\n${jsonContent}`;
 
   try {
+    // Send the modified question to OpenAI
     const aiResponse = await openAiRequest(modifiedQuestion);
+    
+
+    // Assuming openAiRequest returns the response in a usable format
+    // responseElement.innerText = aiResponse || "No response from OpenAI.";
     showTypingEffect(aiResponse, responseElement, incomingMessageDiv);
+
   } catch (error) {
     console.error("Error while fetching the AI response:", error);
     responseElement.innerText = "Error: Unable to get a response from the AI.";
+  } finally {
+    incomingMessageDiv.classList.remove("loading"); // Hide loading
   }
-};
+}
 
 // Make a request to OpenAI API (using chat/completions)
 async function openAiRequest(modifiedQuestion) {
@@ -105,11 +105,11 @@ async function openAiRequest(modifiedQuestion) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${openaiAPIKey}`, 
+          Authorization: `Bearer ${openaiAPIKey}`, // Use a securely stored API key
         },
         body: JSON.stringify({
-          model: "gpt-4-turbo", 
-          messages: [{ role: "user", content: prompt }], 
+          model: "ft:gpt-3.5-turbo-1106:personal:demoupbudget:AsqyyR3Z", // Use the appropriate model
+          messages: [{ role: "user", content: prompt }], // Correct usage of 'messages'
           max_tokens: 200,
           temperature: 0.7,
         }),
@@ -132,19 +132,6 @@ async function openAiRequest(modifiedQuestion) {
       return "There was an error processing your request. Please try again.";
     }
 }
-
-const fetchRelevantLogs = async (query) => {
-  try {
-    const result = await pool.query(
-      "SELECT response FROM query_logs WHERE query ILIKE $1 ORDER BY timestamp DESC LIMIT 5",
-      [`%${query}%`]
-    );
-    return result.rows.map(row => row.response).join("\n");
-  } catch (error) {
-    console.error("Error fetching logs:", error);
-    return ""; // Return an empty string if there's an error
-  }
-};
 
 // Show a loading animation while waiting for the API response
 const showLoadingAnimation = () => {
@@ -232,56 +219,7 @@ deleteChatBtn.addEventListener("click", () => {
   }
 });
 
-const fs = require('fs').promises;
 
-const readFeedbackData = async () => {
-  try {
-    const data = await fs.readFile('./feedback.json', 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error('Error reading feedback.json:', error);
-    return { logs: [] }; // Return an empty structure if the file doesn't exist
-  }
-};
-
-const writeFeedbackData = async (data) => {
-  try {
-    await fs.writeFile('./feedback.json', JSON.stringify(data, null, 2), 'utf-8');
-    console.log('Feedback data updated successfully.');
-  } catch (error) {
-    console.error('Error writing to feedback.json:', error);
-  }
-};
-
-const updateFeedback = async (id, isAccurate, correctedResponse) => {
-  const data = await readFeedbackData();
-
-  const log = data.logs.find((entry) => entry.id === id);
-  if (log) {
-    log.isAccurate = isAccurate;
-    if (correctedResponse) log.correctedResponse = correctedResponse;
-    log.timestamp = new Date().toISOString(); // Update the timestamp
-  } else {
-    console.error('Log entry not found for ID:', id);
-  }
-
-  await writeFeedbackData(data);
-};
-
-const fetchCorrectedResponse = async (query) => {
-  const data = await readFeedbackData();
-  const log = data.logs.find(
-    (entry) => entry.query.toLowerCase() === query.toLowerCase() && entry.correctedResponse
-  );
-  return log ? log.correctedResponse : null;
-};
-
-const processQuestion = async (userMessage) => {
-  const correctedResponse = await fetchCorrectedResponse(userMessage);
-
-  const finalResponse = correctedResponse || (await openAiRequest(userMessage));
-  console.log('Final Response:', finalResponse);
-};
 
 // Load the JSON file immediately after the page is loaded
 window.onload = loadJsonFiles;
